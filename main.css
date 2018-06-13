@@ -79,12 +79,22 @@
   transform: translate(0, -2px);
 }
 
-/* images */
 .image-grid {
   display: grid;
   grid-template-columns: auto auto auto auto auto;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
+}
+
+
+/* images */
+@media only screen and (max-width: 800px) {
+  .image-grid {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+  }
 }
 
 .image-grid > img {
