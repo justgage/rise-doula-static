@@ -11,7 +11,7 @@ const saveImage = (url, name) => {
 };
 
 fetch(
-  'https://api.instagram.com/v1/users/self/media/recent/?access_token=262165231.29ff3eb.ff5df6cc1c4a464dbf415bbd5411797d'
+  'https://api.instagram.com/v1/users/self/media/recent/?access_token=7483098617.c5db6de.243e832352fc4518b803995414456e5a'
 )
   .then(data => data.json())
   .then(data => {

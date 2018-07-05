@@ -111,3 +111,14 @@
   transform: scale(0.8);
   z-index: 1;
 }
+
+.sacramento {
+  font-family: 'Sacramento',athelas,georgia,serif;
+}
+
+@media only screen and (min-width: 60em) {
+  .sticky {
+    position: sticky;
+    top: 0;
+  }
+}
