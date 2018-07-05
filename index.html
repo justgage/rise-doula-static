@@ -14,9 +14,14 @@
       <div class="mainImage vh-100 dt w-100 tc bg-dark-gray black-60 cover" style="">
         <div class="dtc v-mid bg-white-90">
           <img alt="logo" class="image mw6 mt4 w-100" src="./rise-logo-final.png" />
+          <div class="dt flex items-center justify-center flex-column flex-row-ns pb3">
+            <a onclick="scrollTo('#about-me')" class="f4 dark-blue avenir link mh3 bg-white-40 hover-bg-white bg-animate mt3 pa3 br-pill" href="#about-me">About Me</a>
+            <a onclick="scrollTo('#about-me')" class="f4 dark-blue avenir link mh3 bg-white-40 hover-bg-white bg-animate mt3 pa3 br-pill" href="#about-me">Doula Services</a>
+            <a onclick="scrollTo('#about-me')" class="f4 dark-blue avenir link mh3 bg-white-40 hover-bg-white bg-animate mt3 pa3 br-pill" href="#about-me">Belly Binding</a>
+          </div>
         </div>
       </div>
-      <div class="mb0">
+      <div id="about-me" class="mb0">
         <img alt="photo of Jessica Peterson" src="./jessica-profile.jpg" class="db w-50-l fl-l sticky" />
         <div class="w-50-l fl-l pa5-ns pa4">
           <h2 id="bio-left" class="lh-title tc mb4-ns mb2 mt3 f2-ns f4 fw3 avenir">Who is</h2>
@@ -76,6 +81,51 @@
         <img src="insta/9.png" alt="instagram-image" />
       </a>
     </div>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+    <script charset="utf-8">
+      /**
+       * Smooth scrolling in JQuery from: https://css-tricks.com/snippets/jquery/smooth-scrolling/
+       */
+// Select all links with hashes
+$('a[href*="#"]')
+  // Remove links that don't actually link to anything
+  .not('[href="#"]')
+  .not('[href="#0"]')
+  .click(function(event) {
+    // On-page links
+    if (
+      location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')
+      &&
+      location.hostname == this.hostname
+    ) {
+      // Figure out element to scroll to
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+      // Does a scroll target exist?
+      if (target.length) {
+        // Only prevent default if animation is actually gonna happen
+        event.preventDefault();
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 1000, function() {
+          // Callback after animation
+          // Must change focus!
+          var $target = $(target);
+          $target.focus();
+          if ($target.is(":focus")) { // Checking if the target was focused
+            return false;
+          } else {
+            $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
+            $target.focus(); // Set focus again
+          };
+        });
+      }
+    }
+  });
+    </script>
   </body>
 
 </html>
