@@ -86,7 +86,6 @@
   grid-row-gap: 0px;
 }
 
-
 /* images */
 @media only screen and (max-width: 800px) {
   .image-grid {
@@ -97,23 +96,24 @@
   }
 }
 
-.image-grid > img {
-  transition: 0.25s cubic-bezier(0.36, 0.07, 0, 1.01);;
-  transform: scale(1.0);
+.image-grid > a > img {
+  transition: 0.25s cubic-bezier(0.36, 0.07, 0, 1.01);
+  object-fit: cover;
+  transform: scale(1);
 }
 
-.image-grid > img:hover {
+.image-grid > a > img:hover {
   transform: scale(0.9);
   z-index: 1;
 }
 
-.image-grid > img:active {
+.image-grid > a > img:active {
   transform: scale(0.8);
   z-index: 1;
 }
 
 .sacramento {
-  font-family: 'Sacramento',athelas,georgia,serif;
+  font-family: 'Sacramento', athelas, georgia, serif;
 }
 
 @media only screen and (min-width: 60em) {
